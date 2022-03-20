@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+}
+*:focus{
+    outline: 0;
+}
+html, body{
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+}
+.chat{
+    height: 100%;
+    display: flex;
+}
+.chat .sidebar{
+    width: 300px;
+    min-width: 300px;
+    background: #eee;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+.chat .sidebar .search{
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.chat .sidebar .search input{
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 0 35px 0 15px;
+}
+.chat .sidebar .search i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px ;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 14px;
+}
+.chat .sidebar .contacts{
+    overflow: auto;
+    flex: 1;
+}
+.chat .sidebar .contacts ul li a{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.chat .sidebar .contacts ul li a:hover{
+    background-color: #fff;
+}
+.chat .sidebar .contacts ul li a img{
+    width: 40px ;
+    height: 40px;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+.chat .sidebar .contacts ul li a .contact .name{
+    font-size: 15px;
+    color: #333;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.chat .sidebar .contacts ul li a .contact .message{
+    font-size: 13px;
+    color: #999;
+
+}
+.chat .content{
+    flex: 1; 
+}
