@@ -3,6 +3,7 @@
     margin: 0;
     border: none;
     text-decoration: none;
+    list-style: none;
 }
 *:focus{
     outline: 0;
@@ -24,7 +25,8 @@ html, body{
     flex-direction: column;
 }
 .chat .sidebar .search{
-    height: 40px;
+    height: 50px;
+    min-height: 50px;
     border-bottom: 1px solid #ddd;
     position: relative;
     padding: 0 10px;
@@ -44,7 +46,7 @@ html, body{
     top: 0;
     right: 0;
     width: 40px ;
-    height: 40px;
+    height: 50px;
     display: flex;
     align-items: center;
     color: #999;
@@ -61,6 +63,20 @@ html, body{
     padding: 0 10px;
 }
 
+.chat .sidebar .contacts ul li.active{
+    background: #fff;
+}
+.chat .sidebar .contacts ul li a .notification{
+    height: 18px;
+    width: 18px;
+    background: red;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 18px;
+    text-align: center;
+    line-height: 16px;
+    margin-left: auto;
+}
 .chat .sidebar .contacts ul li a:hover{
     background-color: #fff;
 }
@@ -82,5 +98,146 @@ html, body{
 
 }
 .chat .content{
-    flex: 1; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.chat .content .message{
+    align-self: flex-start;
+    padding: 15px;
+}
+.chat .content .message-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.chat .content .message-content::before{
+    content: '';
+    margin-bottom: auto;
+}
+.chat .content .message-content .message{
+    align-self: flex-start;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.chat .content .message-content .message .bubble{
+    padding: 5px 12px;
+    background-color: #ddd;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 3px;    
+    align-items: flex-end;
+}
+.chat .content .message-content .message .time{
+    color: #999;
+    font-size: 10px;
+}
+.chat .content .message-content .message.me{
+    align-self: flex-end;
+}
+.chat .content .message-content .message.me .time{
+    text-align: end;
+}
+.chat .content .message-content .message.me .bubble{
+    background-color: #2196f3;
+    color: white;
+}
+
+.chat .content .message-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+.chat .content .message-header .user-info{
+    display: flex;
+    
+}
+.chat .content .message-header .user .time{
+    font-size: 11px;
+    color: #999;
+}
+.chat .content .message-header .user-info img{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.chat .content .message-header .actions ul{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+.chat .content .message-header .actions ul li{
+    margin-left: 10px;
+}
+.chat .content .message-header .actions ul li a{
+    font-size: 18px;
+    color: #999;
+    width: 30px;
+    display: block;
+    text-align: center;
+}
+.chat .content .message-header .actions ul li a:hover{
+    color: #222;
+}
+.chat .content .message-content{
+    flex: 1;
+    overflow: auto;
+    background:#fff;
+}
+.chat .content .message-form{
+    height: 50px;
+    background: #ddd;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #999;
+    padding: 0 15px;
+}
+.chat .content .message-form ul{
+    display: flex;
+    align-items: center;
+    
+}
+.chat .content .message-form ul li{
+    font-size: 30px;
+    text-align: center;
+    margin: 2px;
+}
+.chat .content .message-form ul li.input{
+    flex:1;
+}
+.chat .content .message-form ul li.input input{
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+
+
+}
+.smile{
+background: #2196f3;
+color: white;
+padding: 5px;
+border-radius: 50%;
+}
+.mic{
+    
+    background: red;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.img{
+    background: green;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.icon:hover{
+    opacity: 0.7;
 }
